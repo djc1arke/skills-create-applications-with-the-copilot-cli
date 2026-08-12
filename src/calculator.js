@@ -136,7 +136,7 @@ function main() {
 
   if (!operation) {
     console.error(
-      'Usage: node calculator.js <add|subtract|multiply|divide|modulo|power|sqrt> <a> [b]'
+      'Usage: node calculator.js <add|subtract|multiply|divide|modulo|power|sqrt|squareroot> <a> [b]'
     );
     process.exitCode = 1;
     return;
@@ -146,7 +146,7 @@ function main() {
   const fn = operations[normalizedOperation];
   if (!fn) {
     console.error(
-      `Unknown operation "${operation}". Supported operations: add, subtract, multiply, divide, modulo, power, sqrt.`
+      `Unknown operation "${operation}". Supported operations: add, subtract, multiply, divide, modulo, power, sqrt, squareroot.`
     );
     process.exitCode = 1;
     return;
@@ -156,7 +156,7 @@ function main() {
   if (rawOperands.length !== expectedOperandCount) {
     console.error(
       expectedOperandCount === 1
-        ? 'Usage: node calculator.js <sqrt> <a>'
+        ? 'Usage: node calculator.js <sqrt|squareroot> <a>'
         : 'Usage: node calculator.js <add|subtract|multiply|divide|modulo|power> <a> <b>'
     );
     process.exitCode = 1;
